@@ -1,0 +1,10 @@
+{
+  "name": "cvfd-phase-book",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "CVFD Probationary Phase Book with training division hub",
+  "dependencies": {
+    "@netlify/blobs": "^10.7.0"
+  }
+}

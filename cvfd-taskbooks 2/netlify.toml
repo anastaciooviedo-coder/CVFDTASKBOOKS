@@ -1,0 +1,14 @@
+[build]
+  publish = "public"
+  command = "echo 'No build step needed'"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Keep the admin hub out of search engines and allow the book to be added to a phone's Home Screen
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Referrer-Policy = "no-referrer"

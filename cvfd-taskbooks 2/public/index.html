@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Task Book">
+<meta name="theme-color" content="#0F4761">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<title>CVFD Task Book</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body data-tab="ov">
+<div id="gate" class="gate" hidden>
+  <form id="gateForm" autocomplete="off">
+    <img src="icon-512.png" alt="">
+    <h1>CVFD Task Book</h1>
+    <p>Enter the access code you received from the Training Division.</p>
+    <input class="f" id="codeIn" maxlength="12" placeholder="ACCESS CODE" aria-label="Access code" autocapitalize="characters" spellcheck="false">
+    <button class="b2 pri" type="submit">Open my task book</button>
+    <div class="msg" id="gateMsg" role="alert"></div>
+  </form>
+</div>
+
+<div id="app" hidden>
+  <div class="viewnote" id="viewNote" hidden></div>
+  <div class="top">
+    <div class="bar">
+      <div class="brand"><b id="bookTitle">CVFD TASK BOOK</b><span id="who"></span></div>
+      <div class="actions">
+        <span class="sync" id="sync"><i></i><span>Loading…</span></span>
+        <button class="btn" type="button" id="printBtn">Print / PDF</button>
+        <button class="btn" type="button" id="exitBtn" title="Sign out of this book on this device">Switch book</button>
+      </div>
+    </div>
+    <div class="tabs" role="tablist" id="tabs"></div>
+  </div>
+  <main>
+    <div class="summary" id="summary"></div>
+    <div id="panels"><div class="loading">Loading your task book…</div></div>
+    <p class="foot">Your entries save to the CVFD Training Division automatically. If you lose signal, they are kept on this device and sent when you reconnect.<br>Tip: on iPhone or iPad, tap Share → Add to Home Screen so the book opens like an app.</p>
+  </main>
+</div>
+
+<div class="sigmodal" id="sigModal" role="dialog" aria-modal="true" aria-labelledby="sigTitle">
+  <div class="sigpanel">
+    <h3 id="sigTitle">Sign</h3>
+    <p>Sign with your finger or Apple Pencil inside the box.</p>
+    <div class="sigpad"><canvas id="sigCanvas"></canvas></div>
+    <div class="sigbtns">
+      <button type="button" class="b2 red left" id="sigRemove">Remove signature</button>
+      <button type="button" class="b2" id="sigClear">Clear</button>
+      <button type="button" class="b2" id="sigCancel">Cancel</button>
+      <button type="button" class="b2 pri" id="sigDone">Save signature</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/render.js"></script>
+<script src="js/book.js"></script>
+</body>
+</html>
